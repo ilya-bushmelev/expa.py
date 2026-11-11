@@ -134,7 +134,6 @@ class Expa:
             if op == '+': return left + right
             if op == '-': return left - right
             if op == '*': return left * right
-            # No error message, 
             if op == '/':
                 if right == 0: raise ZeroDivisionError() 
                 return left / right
@@ -209,8 +208,10 @@ expa = Expa()
 
 # Starts if executed main file (expa.py)
 # Запускается если запущен главный файл (expa.py)
-if __name__ == '__main__':
+def main():
     if sys.argv[1:]:
         print(expa(' '.join(sys.argv[1:])))
     else:
         expa.interactive()
+if __name__ == '__main__':
+    main()
